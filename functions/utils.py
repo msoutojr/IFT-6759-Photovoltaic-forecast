@@ -6,44 +6,49 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-def train(model, train_loader, optimizer, loss_fn):
+def train_test(model, train_loader, test_loader, optimizer, loss_fn, device):
     
-    """Perform one epoch of training."""
+    """Perform one epoch of training and evaluate the model by doing one pass over a test dataset"""
+    
+    # train
     
     loss_train = 0
-    n = 0
     
     model.train()
     for batch_idx, (inputs, target) in enumerate(train_loader):  
         
-        output = model.forward(inputs.float())
-        loss = loss_fn(output.float(), target.float())
+        #inputs = inputs.to(device)
+        #target = target.to(device)
+        
+        output = model.forward(inputs.to(device).float())
+        loss = loss_fn(output.float().view(output.shape[0]), target.to(device).float())
         
         with torch.no_grad():
-            loss_train += loss   
+            loss_train += loss.item()   
         
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        n += 1
-    return loss_train/n
 
 
-def test(model, test_loader, loss_fn):
+    """"""
     
-    """Evaluate the model by doing one pass over a dataset"""
+    # test
     
     loss_test = 0
-    n = 0
     
     model.eval()
     with torch.no_grad():
     
         for batch_idx, (inputs, target) in enumerate(test_loader):
-
-            output = model.forward(inputs.float())
-            loss = loss_fn(output.float(), target.float())
-            loss_test += loss
-            n += 1
+            
+            #inputs = inputs.to(device)
+            #target = target.to(device)
+            
+            output = model.forward(inputs.to(device).float())
+            loss = loss_fn(output.float().view(output.shape[0]), target.to(device).float())
+            loss_test += loss.item()
+            
+            #print('batch: '+str(batch_idx) + ' , inputs shape:' + str(inputs.shape) + ' , loss = ' + str(loss.item()))
     
-    return loss_test/n
+    return loss_train, loss_test
