@@ -6,11 +6,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-def train_test(model, train_loader, test_loader, optimizer, loss_fn, device):
+def train(model, train_loader, optimizer, loss_fn, device):
     
-    """Perform one epoch of training and evaluate the model by doing one pass over a test dataset"""
-    
-    # train
+    """Perform one epoch of training the model by doing one pass over a train dataset"""
     
     loss_train = 0
     
@@ -19,6 +17,7 @@ def train_test(model, train_loader, test_loader, optimizer, loss_fn, device):
         
         #inputs = inputs.to(device)
         #target = target.to(device)
+        optimizer.zero_grad()
         
         output = model.forward(inputs.to(device).float())
         loss = loss_fn(output.float().view(output.shape[0]), target.to(device).float())
@@ -26,12 +25,15 @@ def train_test(model, train_loader, test_loader, optimizer, loss_fn, device):
         with torch.no_grad():
             loss_train += loss.item()   
         
-        optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-
-
-    """"""
+    
+    return loss_train
+ 
+    
+def test(model, test_loader, optimizer, loss_fn, device):
+    
+    """Evaluate the model by doing one pass over a test dataset"""
     
     # test
     
@@ -51,4 +53,4 @@ def train_test(model, train_loader, test_loader, optimizer, loss_fn, device):
             
             #print('batch: '+str(batch_idx) + ' , inputs shape:' + str(inputs.shape) + ' , loss = ' + str(loss.item()))
     
-    return loss_train, loss_test
+    return loss_test
