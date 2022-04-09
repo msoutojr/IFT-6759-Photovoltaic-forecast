@@ -190,13 +190,25 @@ def create_dataloaders(seq_len, dates_train, dates_test, set_train, set_test, ta
                         train_loaders = []
                         valid_loaders = []
                         
+                        val_split=0.2
+                        train_idx, val_idx = train_test_split(list(range(len(train_data_base))), test_size=val_split)
+                        train_data = Subset(train_data_base, train_idx)
+                        val_data = Subset(train_data_base, val_idx)
+                        
                         train_loaders.append(DataLoader(
-                                  train_data_base,
+                                  train_data,
                                   batch_size=batch_size,
                                   shuffle=True,
                                   num_workers=2
                                 ))
                       
+                        valid_loaders.append(DataLoader(
+                                  val_data,
+                                  batch_size=batch_size,
+                                  shuffle=True,
+                                  num_workers=2
+                                ))
+                        
                         test_loader = DataLoader(
                                   test_data_base,
                                   batch_size=batch_size_eval,
@@ -204,7 +216,7 @@ def create_dataloaders(seq_len, dates_train, dates_test, set_train, set_test, ta
                                   num_workers=2
                                 )
                         
-                        valid_loaders.append(test_loader)
+  
                       
                       
             return train_loaders, valid_loaders, test_loader
