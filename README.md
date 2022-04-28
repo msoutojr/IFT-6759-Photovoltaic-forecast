@@ -1,4 +1,4 @@
-# IFT 3710/6759 - Projets (avancés) en apprentissage automatique
+# IFT-6759 - Projets avancés en apprentissage automatique
 ## Project: Photovoltaic Power and Solar Radiation Forecasting
 
 Project developed during the course IFT-6759 at the University of Montreal, in the winter semester 2022.
@@ -15,15 +15,15 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 ## Instructions
 
-Notebooks in the main folder are independent.
+* Notebooks in the main folder are independent.
 
-Notebooks 1 and 2 are part of the reference paper replication step.
+* Notebooks 1 and 2 are part of the reference paper replication step.
 
-Notebooks 3 to 5 are the experiences developed by the group seeking to improve the performance of the model. These notebooks can be run independently.
+* Notebooks 3 to 5 are the experiences developed by the group seeking to improve the performance of the model. These notebooks can be run independently.
 
-Some notebooks have a lightweight version for the purpose of verifying the functioning of the algorithms.
+* Some notebooks have a lightweight version for the purpose of verifying the functioning of the algorithms.
 
-The experiments were executed using python 3.7.
+* The experiments were executed using python 3.7.
 
 ---
 
