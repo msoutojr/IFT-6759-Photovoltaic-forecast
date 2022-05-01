@@ -25,6 +25,9 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 * The experiments were executed using python 3.7.
 
+* The dataset is available in the discipline cluster and must be placed in the folder 'data':
+images_trainval.npy, images_test.npy, pv_log_trainval.npy, pv_log_test.npy, datetime_trainval.npy, datetime_test.npy.
+
 ---
 
 ## Third part modules
