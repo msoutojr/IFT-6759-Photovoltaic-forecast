@@ -21,8 +21,6 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 * Notebooks 3 is the ConvGRU experiments. Also, there is a lightweight version.
 
-* Some notebooks have a lightweight version for the purpose of verifying the functioning of the algorithms.
-
 * Script 4 is the one used to train ConvLSTM. It comes with 27 configurations which can be called individually on the command line.
     * Example: call `python 4_ConvLSTM.py 0` in order to train the first configuration.
 
