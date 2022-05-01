@@ -215,3 +215,9 @@ def test_gru(model, test_loader, optimizer, loss_fn, device, seq_len):
 
             
     return loss_test/n
+
+def train_lstm(model, train_loader, optimizer, loss_fn, device, seq_len):
+    return train_gru(model, train_loader, optimizer, loss_fn, device, seq_len)
+    
+def test_lstm(model, test_loader, optimizer, loss_fn, device, seq_len):
+    return test_gru(model, test_loader, optimizer, loss_fn, device, seq_len)

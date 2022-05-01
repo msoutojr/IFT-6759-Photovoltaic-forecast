@@ -23,7 +23,10 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 * Some notebooks have a lightweight version for the purpose of verifying the functioning of the algorithms.
 
-* The experiments were executed using python 3.7.
+* Script 4 is the one used to train ConvLSTM. It comes with 27 configurations which can be called individually on the command line.
+    * Example: call `python 4_ConvLSTM.py 0` in order to train the first configuration.
+
+* The experiments were executed using Python 3.7 and require the NumPy, Pandas, PyTorch, and Sci-kit Learn libraries. 
 
 * The dataset is available in the discipline cluster and must be placed in the folder 'data':
 images_trainval.npy, images_test.npy, pv_log_trainval.npy, pv_log_test.npy, datetime_trainval.npy, datetime_test.npy.
@@ -37,6 +40,3 @@ images_trainval.npy, images_test.npy, pv_log_trainval.npy, pv_log_test.npy, date
 ## References
 
 [1] Yuhao Nie, Yuchi Sun,  Yuanlei Chen, Rachel Orsini, and  Adam Brandt. PV power output prediction from sky images using convolutional neural network: The comparison of sky-condition-specific submodels and an end-to-end model. J. Renewable Sustainable Energy 12, 046101 (2020); https://doi.org/10.1063/5.0014016.
-
-
-
