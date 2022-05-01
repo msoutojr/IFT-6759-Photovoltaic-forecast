@@ -17,9 +17,9 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 * Notebooks in the main folder are independent.
 
-* Notebooks 1 and 2 are part of the reference paper replication step.
+* Notebooks 1 and 2 are part of the reference paper replication step. There are lightweight versions.
 
-* Notebooks 3 to 5 are the experiences developed by the group seeking to improve the performance of the model. These notebooks can be run independently.
+* Notebooks 3 is the ConvGRU experiments. Also, there is a lightweight version.
 
 * Some notebooks have a lightweight version for the purpose of verifying the functioning of the algorithms.
 
