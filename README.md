@@ -26,7 +26,7 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 
 * The experiments were executed using Python 3.7 and require the NumPy, Pandas, PyTorch, and Sci-kit Learn libraries. 
 
-* The dataset is available in the discipline cluster and must be placed in the folder 'data':
+* The dataset is available in the course cluster and must be placed in the folder 'data':
 images_trainval.npy, images_test.npy, pv_log_trainval.npy, pv_log_test.npy, datetime_trainval.npy, datetime_test.npy.
 
 ---
