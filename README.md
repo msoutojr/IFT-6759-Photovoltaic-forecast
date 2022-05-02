@@ -27,8 +27,14 @@ The main theme of the project is photovoltaic energy generation forecast. The ob
 * The experiments were executed using Python 3.7 and require the NumPy, Pandas, PyTorch, and Sci-kit Learn libraries. 
 
 * The dataset is available in the course cluster and must be placed in the folder 'data':
-images_trainval.npy, images_test.npy, pv_log_trainval.npy, pv_log_test.npy, datetime_trainval.npy, datetime_test.npy.
+`images_trainval.npy`, `images_test.npy`, `pv_log_trainval.npy`, `pv_log_test.npy`, `datetime_trainval.npy`, `datetime_test.npy`.
+  
+* `labels_of_cnn_classifier` is the folder that can be used generate labels for CNN classifier. 
 
+* `functions/final_train` is the file is to be used for training the Sunset Models. 
+`functions/train_aug_split.py` is to be used generate augmented data with training samples.
+  
+* `function/val_train_split.py` is to be used split the data into validation and train - currently set at 90% for train and 10% for validation, however, user can modify this in the code as per their use. 
 ---
 
 ## Third part modules
